@@ -2,9 +2,11 @@
 import { createClient } from "@supabase/supabase-js";
 import type { Database } from "./types";
 
-const SUPABASE_URL = process.env.SUPABASE_URL;
-const SUPABASE_PUBLISHABLE_KEY = process.env.SUPABASE_PUBLISHABLE_KEY;
-
+const SUPABASE_URL = import.meta.env.VITE_PUBLIC_SUPABASE_URI;
+const SUPABASE_PUBLISHABLE_KEY = import.meta.env
+  .VITE_PUBLIC_SUPABASE_PUBLISHABLE_KEY;
+console.log("SUPABASE_PUBLISHABLE_KEY", SUPABASE_PUBLISHABLE_KEY);
+console.log("SUPABASE_URL", SUPABASE_URL);
 // Import the supabase client like this:
 // import { supabase } from "@/integrations/supabase/client";
 
